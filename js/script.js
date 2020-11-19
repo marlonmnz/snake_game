@@ -33,6 +33,18 @@ function update (event){
     if(event.keyCode == 40 && direction != "up") direction = "down";
 }
 
+// Criar comida
+
+let food = {
+    x: Math.floor(Math.random() * 15 + 1) * box,
+    y: Math.floor(Math.random() * 15 + 1) * box
+}
+
+function drawFood (){
+    context.fillStyle = "red"
+    context.fillRect(food.x, food.y, box, box);
+}
+
 
 // Start Game
 
@@ -46,7 +58,8 @@ function iniciarJogo(){
     
 
     criarBG();
-    criarCobra(); 
+    criarCobra();
+    drawFood();
     
     let snakeX = snake[0].x;
     let snakeY = snake[0].y;
